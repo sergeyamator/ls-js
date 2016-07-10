@@ -1,20 +1,19 @@
 'use strict';
 
-let i = 0;
+let element = document.querySelector('.list');
 
 /**
  * Выводим все значения элемента с
  * помощью рекурсивной функции
  * @param {Array.<String>} arr
- * @param {HTMLElement} container
+ * @param {Number} index
  */
-function documentRec(arr, container) {
-  debugger;
-  if (i < arr.length) {
-    container.appendChild(createItem(arr[i]));
-    i++;
+function documentRec(arr, index) {
+  if (index < arr.length) {
+    element.appendChild(createItem(arr[index]));
+    index++;
 
-    documentRec(arr, container);
+    documentRec(arr, index);
   }
 }
 
@@ -32,3 +31,6 @@ function createItem(item) {
 }
 
 module.exports = documentRec;
+
+
+

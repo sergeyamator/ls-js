@@ -1,6 +1,6 @@
 'use strict';
 
-let element = document.querySelector('.list'),
-  arr = ['я', 'умею', 'писать', 'рекурсивные', 'функции'];
+const START_FROM = 0;
+let arr = ['я', 'умею', 'писать', 'рекурсивные', 'функции'];
 
-require('./modules/documentRec')(arr, element);
+require('./modules/documentRec')(arr, START_FROM);
