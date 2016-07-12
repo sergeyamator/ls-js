@@ -5,8 +5,13 @@ git clone https://github.com/path/to/repo
 npm install
 There are two main folder:
 
-dev - for developing (jade, sass, ...) 
+dev - for developing (jade, sass, ...)
 prod - folder for prodaction with files minification
 
 For this project uses BEM methodology:
 For element should use block-name_elem-name For modifier should use block-name_elem-name--modifier
+
+How to install:
+* clone this repo
+* run npm install
+* run gulp
