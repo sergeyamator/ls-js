@@ -75,10 +75,8 @@ function slice(array, begin, end) {
 }
 
 function reduce(array, fn, init) {
-  debugger;
   let prev = null,
-    index = 0,
-    result = null;
+    index = 0;
 
   if (!isNaN(init)) {
     prev = init;
@@ -87,14 +85,13 @@ function reduce(array, fn, init) {
     index = 1;
   }
 
-  for (index; index <= array.length; index++) {
+  for (index; index < array.length; index++) {
       let current = array[index];
 
-    result = fn(prev, current, index, array);
-    prev = array[index];
+    prev = fn(prev, current, index, array);
   }
 
-  return result;
+  return prev;
 }
 
 module.exports = {

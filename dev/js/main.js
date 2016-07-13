@@ -43,6 +43,6 @@ console.group('reduce');
 let reduceArray = [1, 2, 3, 4, 5];
 var result = array.reduce(reduceArray, function(sum, current) {
   return sum + current;
-}, 0);
+}, 5);
 console.log(result);
 console.groupEnd();
