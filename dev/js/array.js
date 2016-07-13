@@ -101,14 +101,15 @@ function reduce(array, fn, init) {
 }
 
 /**
- * 
+ *
  * @param {Array} array
  * @param {Number} begin
  * @param {Number} [deleteCount]
  * @returns {Array}
  */
 function splice(array, begin, deleteCount) {
-  const LAST_ELEMENT_IN_ARRAY = array.length - 1;
+  const LAST_ELEMENT_IN_ARRAY = array.length - 1,
+    EXTRA_PARAMS_STARTED_FROM = 2;
   let deletedArray = [], partAfterDelete = [];
 
   if (begin > array.length) {
@@ -125,8 +126,8 @@ function splice(array, begin, deleteCount) {
     array.length = begin;
   }
 
-  if (arguments.length > 2) {
-    for (let i = 3; i < arguments.length; i++) {
+  if (arguments.length > EXTRA_PARAMS_STARTED_FROM) {
+    for (let i = EXTRA_PARAMS_STARTED_FROM + 1; i < arguments.length; i++) {
       array[array.length] = arguments[i];
     }
   }
