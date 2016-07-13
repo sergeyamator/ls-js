@@ -74,6 +74,12 @@ function slice(array, begin, end) {
   return result;
 }
 
+/**
+ *
+ * @param {Array} array
+ * @param {Function} fn - callback, which is called for every element in array param
+ * @param {Number} [init]
+ */
 function reduce(array, fn, init) {
   let prev = null,
     index = 0;
@@ -86,7 +92,7 @@ function reduce(array, fn, init) {
   }
 
   for (index; index < array.length; index++) {
-      let current = array[index];
+    let current = array[index];
 
     prev = fn(prev, current, index, array);
   }
@@ -94,10 +100,49 @@ function reduce(array, fn, init) {
   return prev;
 }
 
+/**
+ * 
+ * @param {Array} array
+ * @param {Number} begin
+ * @param {Number} [deleteCount]
+ * @returns {Array}
+ */
+function splice(array, begin, deleteCount) {
+  const LAST_ELEMENT_IN_ARRAY = array.length - 1;
+  let deletedArray = [], partAfterDelete = [];
+
+  if (begin > array.length) {
+    begin = LAST_ELEMENT_IN_ARRAY;
+  }
+
+  if (begin < 0) {
+    begin = array.length + begin;
+  }
+
+  if (deleteCount) {
+    deletedArray = slice(array, begin, begin + deleteCount);
+    partAfterDelete = slice(array, begin + deleteCount);
+    array.length = begin;
+  }
+
+  if (arguments.length > 2) {
+    for (let i = 3; i < arguments.length; i++) {
+      array[array.length] = arguments[i];
+    }
+  }
+
+  for (let i = 0; i < partAfterDelete.length; i++) {
+    array[array.length] = partAfterDelete[i];
+  }
+
+  return deletedArray;
+}
+
 module.exports = {
   forEach: forEach,
   filter: filter,
   map: map,
   slice: slice,
-  reduce: reduce
+  reduce: reduce,
+  splice: splice
 };

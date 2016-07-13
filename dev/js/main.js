@@ -46,3 +46,10 @@ var result = array.reduce(reduceArray, function(sum, current) {
 }, 5);
 console.log(result);
 console.groupEnd();
+
+
+console.group('splice');
+let spliceArray = [1, 'first', 2, 'second', 3, 'third', 4, 'fourth', 5, 'fifth'];
+array.splice(spliceArray, 3, 3, 'newFirst', 'newSecond');
+console.log(spliceArray);
+console.groupEnd();
