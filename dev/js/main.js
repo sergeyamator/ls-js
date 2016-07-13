@@ -28,3 +28,21 @@ let map = array.map(arrayElement, (item) => typeof item);
 console.log(map);
 console.groupEnd();
 
+/**
+ * Slice
+ */
+console.group('slice');
+let sliceArray = array.slice(arrayElement, -3);
+console.log(sliceArray);
+console.groupEnd();
+
+/**
+ * Reduce
+ */
+console.group('reduce');
+let reduceArray = [1, 2, 3, 4, 5];
+var result = array.reduce(reduceArray, function(sum, current) {
+  return sum + current;
+}, 0);
+console.log(result);
+console.groupEnd();
