@@ -1,57 +1,50 @@
 'use strict';
 
 let array = require('./array');
+let deepEqual = require('./deepEqual');
 
-let arrayElement = ['я', 4, 3, 5, 10, 'функции', 'я', 4, 3, 5, 10, 'функции'];
+/*var objA = {
+  prop1: 'value1',
+  prop2: 'value2',
+  prop3: 'value3',
+  prop4: {
+    subProp1: 'sub value1',
+    subProp2: {
+      subSubProp1: 'sub sub value1',
+      subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+    }
+  },
+  prop5: 1000,
+  prop6: new Date(2016, 2, 10)
+};
 
-/**
- * Вызываем forEach и выводим его в консол
- */
-console.group('forEach');
-array.forEach(arrayElement, (item, index, arr) => console.log(item, index, arr));
-console.groupEnd();
+var objB = {
+  prop5: 1000,
+  prop3: 'value3',
+  prop1: 'value1',
+  prop2: 'value2',
+  prop6: new Date('2016/03/10'),
+  prop4: {
+    subProp2: {
+      subSubProp1: 'sub sub value1',
+      subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+    },
+    subProp1: 'sub value1'
+  }
+};*/
 
+let objA = {
+ prop1: 'hi',
+ prop2: 5,
+ prop6: new Date(2016, 2, 10)
+};
 
-/**
- * Вызываем фильтр и вызываем его в консоль
- */
-console.group('filter');
-let greaterThan4 = array.filter(arrayElement, (item, index) => item > 4);
-console.log(greaterThan4);
-console.groupEnd();
+let objB = {
+ prop1: 'hi',
+ prop2: 5,
+ prop6: new Date(2016, 2, 10)
+};
 
-/**
- * Вызываем map
- */
-console.group('map');
-let map = array.map(arrayElement, (item) => typeof item);
-console.log(map);
-console.groupEnd();
+console.log(deepEqual(objA, objB));
+//console.log(deepEqual(objA, objB)); //объекты идентичны, вернет true
 
-/**
- * Slice
- */
-console.group('slice');
-let a = [1,2,3,4];
-let sliceArray = array.slice(a, -2, -1);
-let sliceDefault = a.slice(-2, -1);
-console.log(sliceArray, sliceDefault);
-console.groupEnd();
-
-/**
- * Reduce
- */
-console.group('reduce');
-let reduceArray = [1, 2, 3, 4, 5];
-var result = array.reduce(reduceArray, function(sum, current) {
-  return sum + current;
-}, 5);
-console.log(result);
-console.groupEnd();
-
-
-console.group('splice');
-let spliceArray = [1, 'first', 2, 'second', 3, 'third', 4, 'fourth', 5, 'fifth'];
-array.splice(spliceArray, 3, 3, 'newFirst', 'newSecond');
-console.log(spliceArray);
-console.groupEnd();
