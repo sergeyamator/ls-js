@@ -4,8 +4,11 @@
  * Имитация функции forEach
  * @param {Array} array
  * @param {Function} fn - callback, which is called for every element in array param
+ * @param {Array} [thisArg]
  */
-function forEach(array, fn) {
+function forEach(array, fn, thisArg) {
+  thisArg = thisArg || array;
+
   for (let i = 0; i < array.length; i++) {
     let item = array[i], index = i;
     fn(item, index, array);
@@ -67,6 +70,7 @@ function slice(array, begin, end) {
   if (begin < 0) {
     begin = array.length + begin;
   }
+
   for (let i = begin; i < end; i++) {
     result.push(array[i]);
   }
@@ -110,6 +114,7 @@ function reduce(array, fn, init) {
 function splice(array, begin, deleteCount) {
   const LAST_ELEMENT_IN_ARRAY = array.length - 1,
     EXTRA_PARAMS_STARTED_FROM = 2;
+
   let deletedArray = [], partAfterDelete = [];
 
   if (begin > array.length) {
