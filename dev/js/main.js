@@ -3,7 +3,7 @@
 let array = require('./array');
 let deepEqual = require('./deepEqual');
 
-/*var objA = {
+var objA = {
   prop1: 'value1',
   prop2: 'value2',
   prop3: 'value3',
@@ -31,20 +31,8 @@ var objB = {
     },
     subProp1: 'sub value1'
   }
-};*/
-
-let objA = {
- prop1: 'hi',
- prop2: 5,
- prop6: new Date(2016, 2, 10)
 };
 
-let objB = {
- prop1: 'hi',
- prop2: 5,
- prop6: new Date(2016, 2, 10)
-};
 
 console.log(deepEqual(objA, objB));
-//console.log(deepEqual(objA, objB)); //объекты идентичны, вернет true
 
