@@ -2,7 +2,7 @@
 
 let array = require('./array');
 
-let arrayElement = ['я', 4, 3, 5, 10, 'функции'];
+let arrayElement = ['я', 4, 3, 5, 10, 'функции', 'я', 4, 3, 5, 10, 'функции'];
 
 /**
  * Вызываем forEach и выводим его в консол
@@ -32,8 +32,10 @@ console.groupEnd();
  * Slice
  */
 console.group('slice');
-let sliceArray = array.slice(arrayElement, -3);
-console.log(sliceArray);
+let a = [1,2,3,4];
+let sliceArray = array.slice(a, -2, -1);
+let sliceDefault = a.slice(-2, -1);
+console.log(sliceArray, sliceDefault);
 console.groupEnd();
 
 /**

@@ -68,7 +68,15 @@ function slice(array, begin, end) {
   end = end || array.length;
 
   if (begin < 0) {
-    begin = array.length + begin;
+    if (Math.abs(begin) <= array.length) {
+      begin = array.length + begin;
+    } else {
+      begin = 0;
+    }
+  }
+
+  if (end < 0) {
+    end = array.length + end;
   }
 
   for (let i = begin; i < end; i++) {
