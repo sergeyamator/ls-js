@@ -1,6 +1,10 @@
 'use strict';
 
-const START_FROM = 0;
-let arr = ['я', 'умею', 'писать', 'рекурсивные', 'функции'];
+let prepend = require('./modules/prepend');
 
-require('./modules/documentRec')(arr, START_FROM);
+let container = document.querySelector('.container');
+let div = document.createElement('div');
+
+div.textContent = 'I am a new element on the page';
+
+prepend(container, div);
