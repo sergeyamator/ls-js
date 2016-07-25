@@ -1,10 +1,16 @@
-@import "base/_fonts";
-@import "utils/_mixin";
-@import "utils/_sprite";
-@import "utils/_variables";
 @import "base/_base";
 @import "base/_myreset";
 @import "base/_common";
 
+button {
+  height: 40px;
+  background: #19a34a;
+  padding: 10px 20px 15px;
+  color: #fff;
+  border: 0;
+}
 
-
+.square {
+  position: absolute;
+  cursor: move;
+}

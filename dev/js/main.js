@@ -1,6 +1,8 @@
 'use strict';
 
-const START_FROM = 0;
-let arr = ['я', 'умею', 'писать', 'рекурсивные', 'функции'];
+let randomElement = require('./modules/randomElement');
 
-require('./modules/documentRec')(arr, START_FROM);
+document.querySelector('button').addEventListener('click', function() {
+  randomElement('div', 'square');
+});
+
