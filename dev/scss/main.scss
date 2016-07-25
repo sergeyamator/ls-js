@@ -7,4 +7,21 @@
 @import "base/_common";
 
 
+.cities-list {
+  li {
+    display: inline-block;
+    padding: 5px;
+    background: #97a373;
+  }
+}
+.search-block {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.autofill {
+  background: #f9e5ff;
+  top: 100%;
+  position: absolute;
+}
 
