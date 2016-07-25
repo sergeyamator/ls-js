@@ -1,7 +1,9 @@
 'use strict';
 
 function prepend(container, newElement) {
-  let before = container.children[0];
+  container = container || document.body;
+
+  let before = container.firstChild;
   container.insertBefore(newElement, before);
 }
 
