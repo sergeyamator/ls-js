@@ -8,7 +8,7 @@ let render = require('./render');
  * после чего отрисовываем список
  * @param {String} url
  */
-function sendAjax(url, callback) {
+function sendAjax(url) {
   let promise = new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
 
@@ -23,18 +23,11 @@ function sendAjax(url, callback) {
     });
 
     xhr.send();
-
   });
 
-  promise.then(
-    (result) => {
-      callback(result, document.querySelector('.cities-list'));
-    },
+  return promise;
 
-    () => {
-      new Error('Во время запроса произошла ошибка');
-    }
-  )
+
 }
 
 module.exports = sendAjax;
