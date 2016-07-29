@@ -13,6 +13,11 @@ table.addEventListener('click', (e) => {
  confirm(`Вы действительно хотите удалить печеньку ${name} ?`) &&  deleteCookie(name);
 });
 
+if (!document.cookie) {
+  document.cookie = 'firstCookie=Good';
+  document.cookie = 'secondCookie= day';
+}
+
 for (let key in cookieObj) {
   let result = cookie(key, cookieObj[key]);
   table.appendChild(result);
