@@ -9,7 +9,6 @@ function getAllCookies() {
     result[value[0]] = value[1]
   });
 
-  console.log(result);
   return result;
 }
 

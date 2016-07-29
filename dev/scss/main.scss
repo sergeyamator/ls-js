@@ -6,6 +6,17 @@
 @import "base/_myreset";
 @import "base/_common";
 
+tr {
+  &:hover {
+    background: rgba(#1aa330, 0.2);
+  }
+}
+
+.cookie_column-delete:hover {
+  background: #6886ff;
+  cursor: pointer;
+}
+
 td {
   border: 1px solid gray;
   padding: 10px;
