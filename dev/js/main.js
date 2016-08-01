@@ -1,9 +1,23 @@
 'use strict';
 
-require('./modules/renderCookies');
+let renderCookies = require('./modules/renderCookies');
 let addCookie = require('./modules/addCookie');
 
-document.forms[0].addEventListener('submit', (e) => {
-  e.preventDefault();
-  addCookie(e.target);
-});
+renderCookies();
+
+if (document.querySelector('.add-cookie')) {
+  document.querySelector('.add-cookie').addEventListener('click', () => {
+    show('.new_cookie');
+    document.forms[0].addEventListener('submit', (e) => {
+      e.preventDefault();
+      addCookie(e.target);
+      renderCookies();
+    });
+  })
+}
+
+function show(el) {
+  document.querySelector(el).classList.remove('is-hidden');
+}
+
+

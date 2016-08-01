@@ -42,9 +42,12 @@
   text-decoration: underline;
 }
 
-
 /* ------ View ------ */
 
 .error {
   outline: 1px solid red !important;
+}
+
+.is-hidden {
+  display: none;
 }

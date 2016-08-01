@@ -9,6 +9,7 @@ function addCookie(form) {
   if (isValid(form)) {
     toDay.setDate(toDay.getDate() + day);
     document.cookie = `${name} = ${value}; expires = ${toDay.toUTCString()}`;
+    clearForm(form);
   } else {
     throw new Error('Заполнены не все поля');
   }
@@ -29,6 +30,10 @@ function isValid(form) {
   }
 
   return isValid;
+}
+
+function clearForm(form) {
+  form.reset();
 }
 
 module.exports = addCookie;
