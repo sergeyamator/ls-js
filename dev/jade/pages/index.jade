@@ -2,6 +2,14 @@ extends ../_main
 block title
     title main content
 block page
+
+  button.add-cookie Add new cookie
+  .new_cookie
+    form(method="POST" action="#")
+      input(placeholder="Введите имя печеньки" data-cookie="name")
+      input(placeholder="Введите значение печеньки" data-cookie="value")
+      input(placeholder="Введите дату действия печеньки" data-cookie="day")
+      button(type="submit") Сохранить
   template.cookie
         tr.cookies_row
             td.cookie_column

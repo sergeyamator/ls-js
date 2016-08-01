@@ -6,19 +6,43 @@
 @import "base/_myreset";
 @import "base/_common";
 
+table {
+  margin-bottom: 10px;
+}
+
 tr {
   &:hover {
     background: rgba(#1aa330, 0.2);
   }
 }
 
-.cookie_column-delete:hover {
-  background: #6886ff;
-  cursor: pointer;
+.cookie_column-delete {
+  transition: 0.3s;
+
+  &:hover {
+    background: #6886ff;
+    cursor: pointer;
+  }
 }
 
 td {
   border: 1px solid gray;
   padding: 10px;
+}
+
+button {
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.new_cookie {
+  width: 400px;
+
+}
+
+input {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
