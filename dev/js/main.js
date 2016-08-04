@@ -10,7 +10,7 @@ if (document.querySelector('.add-cookie')) {
     show('.new_cookie');
     document.forms[0].addEventListener('submit', (e) => {
       e.preventDefault();
-      addCookie(e.target);
+      addCookie();
       renderCookies();
     });
   })

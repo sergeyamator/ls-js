@@ -1,9 +1,15 @@
 'use strict';
 
-function addCookie(form) {
-  let name = form.querySelector('[data-cookie="name"]').value,
-    value = form.querySelector('[data-cookie="value"]').value,
-    day = Number(form.querySelector('[data-cookie="day"]').value),
+let form = document.querySelector('form'),
+  inputs = document.querySelectorAll('input'),
+  nameField = form.querySelector('[data-cookie="name"]'),
+  valueField = form.querySelector('[data-cookie="value"]'),
+  dateField = form.querySelector('[data-cookie="day"]');
+
+function addCookie() {
+  let name = nameField.value,
+    value = valueField.value,
+    day = Number(dateField.value),
     toDay = new Date();
 
   if (isValid(form)) {
@@ -17,7 +23,6 @@ function addCookie(form) {
 
 function isValid(form) {
   if (!form) return;
-  let inputs = form.querySelectorAll('input');
   let isValid = null;
 
   for (let i = 0; i < inputs.length; i++) {
