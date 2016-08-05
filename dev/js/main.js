@@ -1,9 +1,5 @@
 'use strict';
 
-/* --------------- Timer --------------- */
-let timer = require('./modules/timer');
-timer(3000).then(() => console.log('я вывелась через 3 секунды'));
-
 /* --------------- Render cities --------------- */
 let sendAjax = require('./modules/sendAjax');
 let render = require('./modules/render');

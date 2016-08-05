@@ -6,17 +6,13 @@
  * @param {Object.<Array>} data
  */
 function render(data, container) {
-  let fragment = document.createDocumentFragment();
   data.sort(sorByName);
 
-  data.forEach((item) => {
-    let element = document.createElement('li');
+  let source = document.querySelector('#city-template').innerHTML,
+    templateFn = Handlebars.compile(source),
+    template = templateFn({data: data});
 
-    element.textContent = item.name;
-    fragment.appendChild(element);
-  });
-
-  container.appendChild(fragment);
+  container.innerHTML = template;
 }
 
 function sorByName(a, b) {

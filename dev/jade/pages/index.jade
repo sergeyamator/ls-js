@@ -6,5 +6,12 @@ block page
     .search-block
         input.search-input
         .autofill
+
     ul.cities-list
+
+    script(id="city-template" type="text/x-handlebars-template").
+        {{#each data}}
+          <li>{{name}}</li>
+        {{/each}}
+
 
