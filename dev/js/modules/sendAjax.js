@@ -26,8 +26,6 @@ function sendAjax(url) {
   });
 
   return promise;
-
-
 }
 
 module.exports = sendAjax;
