@@ -5,14 +5,18 @@
  * @param {Number} number
  * @returns {{sum: sum, dif: dif, div: div, mul: mul}}
  */
-function calculator(number) {
+class Calculator {
+  constructor(number) {
+    this.number = number;
+  }
+
   /**
    * Функция суммирует все переданные аргументы
    * с сохранненным в замыкании первым числом
    * @returns {Number}
    */
-  function sum() {
-    let result = number;
+  sum() {
+    let result = this.number;
 
     for (let i = 0; i < arguments.length; i++) {
       result += arguments[i];
@@ -26,23 +30,23 @@ function calculator(number) {
    * из сохранненного в замыкании первого числа
    * @returns {Number}
    */
-  function dif() {
-    let result = number;
+  dif() {
+    let result = this.number;
 
     for (let i = 0; i < arguments.length; i++) {
       result -= arguments[i];
     }
 
     return result;
-  }
+  };
 
   /**
-   * Функция делит первое сохраненное число в замыкании 
+   * Функция делит первое сохраненное число в замыкании
    * на все переданные аргументы
    * @returns {Number}
    */
-  function div() {
-    let result = number;
+  div() {
+    let result = this.number;
 
     for (let i = 0; i < arguments.length; i++) {
       if (arguments[i] === 0) {
@@ -56,12 +60,12 @@ function calculator(number) {
   }
 
   /**
-   * Функция перемножает все переданные аргументы с 
+   * Функция перемножает все переданные аргументы с
    * первым числом, которое хранится в замыкании
    * @returns {Number}
    */
-  function mul() {
-    let result = number;
+  mul() {
+    let result = this.number;
 
     for (let i = 0; i < arguments.length; i++) {
       result *= arguments[i];
@@ -69,13 +73,7 @@ function calculator(number) {
 
     return result;
   }
-
-  return {
-    sum: sum,
-    dif: dif,
-    div: div,
-    mul: mul
-  }
 }
 
-module.exports = calculator;
+
+module.exports = Calculator;
